@@ -2,6 +2,8 @@
 let loginBtn = document.getElementById('loginBtn');
 let links = document.querySelectorAll('a')
 
+console.log(location.href)
+
 
 // setting id for links using js 
 
@@ -19,9 +21,9 @@ loginBtn.classList.add('mb-4');
 
 // setting local storage with default data  
 
-localStorage.setItem("username", "welcome");
-localStorage.setItem("email", "welcome@gmail.com");
-localStorage.setItem("password", "1234");
+// localStorage.setItem("username", "welcome");
+// localStorage.setItem("email", "welcome@gmail.com");
+// localStorage.setItem("password", "1234");
 
 
 
@@ -34,12 +36,15 @@ loginBtn.addEventListener('click' , ()=>{
     let form = document.getElementById('form');
 
     if(email.value == localStorage.getItem('email') && password.value == localStorage.getItem('password')){
-        form.setAttribute('action','./src/login.html')
+        window.open('http://127.0.0.1:5500/src/login.html')
     }else{
         
-        alert("wrong password")
-        email.value = "" ;
-        password.value = "";
+        if(email.value != "" && password.value != ""){
+            alert("wrong password")
+            email.value = "" ;
+            password.value = "";
+        }
+        
     }
 })
 

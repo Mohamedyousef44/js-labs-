@@ -11,19 +11,23 @@ signUp.addEventListener('click' , ()=>{
     let password = signUpInputs[2];
     let repass = signUpInputs[3];
 
-    localStorage.set('username' , username.value )
-    localStorage.set('email' , email.value )
-    localStorage.set('password' , password.value )
+    if(username.value != "" && email.vaue != "" && password.value != ""){
+            if(password.value === repass.value){
+                localStorage.setItem('username' , username.value )
+                localStorage.setItem('email' , email.value )
+                localStorage.setItem('password' , password.value )
+                emailHelp.style.display = 'none'
 
-    if(password.value === repass.value){
+            if(localStorage.getItem('password') == password.value ){
+                window.open('http://127.0.0.1:5500/index.html')
+            }
+                
+             }else{
 
-        window.location.assign('http://127.0.0.1:5500/index.html')
-
-    }else{
-        emailHelp.classList.toggle = 'd-none';
-
-        form.onsubmit = function(e){
-            e.preventDefault();
-        }
+                form.onsubmit = function(){
+                    emailHelp.style.display = 'block';
+                    return false;
+                }  
+            }
     }
 })

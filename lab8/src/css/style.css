@@ -1,0 +1,204 @@
+body{
+    background-color: white; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    width: 400%;
+    height: 350%;
+    background-color: #3D1766;
+    border-radius: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translateX(50%) skew(0,-10deg);
+    z-index: -1;
+    animation: moving 4s ease-in-out infinite alternate ;
+}
+
+@keyframes moving {
+    to{
+        transform: translateX(40%) skew(10deg,0);
+    }     
+    
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 30%;
+    height: auto;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    border-radius: 10px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    width: 100%;
+    height: 25%;
+    background-color: #9271C2;
+
+}
+
+
+.add , .addtask{
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    padding-bottom: 15px;
+
+}
+
+.header p{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+#addBtn{
+    color: aliceblue;
+    background-color: #2D1674;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 8px;
+    border-radius: 20%;
+    transition: all .2s;
+}
+
+#addBtn:hover{
+    transform: scale(1.05);
+}
+#task{
+    padding-top: 10px;
+}
+
+.header input , .taskinput{
+    height: 40px;
+    width: 250px;
+    border-style: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 18px;
+}
+.taskinput{
+    background-color: #703ACF;
+    color: white;
+}
+
+.taskinput:hover{
+    cursor: pointer;
+}
+
+.header input:focus ,.taskinput:focus {
+    outline: none;
+}
+
+.footer{
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#btn{
+    width: 60px;
+    height: 30px;
+    border-style: none;
+    border-radius: 4px;
+    background-color: brown;
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+#btn:hover{
+    transform: scale(1.03);
+}
+
+.marked{
+    background-color: #735E93;
+    opacity: .8;
+    text-decoration: line-through;
+    color: black;
+}
+
+.btnDel{
+    background-color: brown;
+    color: aliceblue;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    cursor: pointer;
+    transition: all .2s;
+    padding-top: 8px;
+    border-radius: 20%;
+}
+.btnDel:hover{
+    transform: scale(1.03);
+}
+
+
+@media (max-width:1000px) and (min-width:600px){
+    .container{
+        width: 40%;
+    }
+}
+
+@media (max-width:599px){
+
+    .container{
+        width: 70%;
+    }
+    .header p{
+        font-size: 16px;
+    }
+
+    #addBtn{
+        width: 30px;
+        height: 30px;
+        padding-top: 4px;
+    }
+    .header input , .taskinput{
+        height: 30px;
+        width: 180px;
+        font-size: 14px;
+    }
+
+    .btnDel{
+        width: 30px;
+        height: 30px;
+        padding-top: 4px;
+    }
+
+
+    body::before{
+        width: 600%;
+        height: 400%;
+    }
+}
+
+
+

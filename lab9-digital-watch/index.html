@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/style.css" rel="stylesheet">
+    <link href="./src/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center align-items-center bg-secondary" >
+        
+        <div class=" container d-flex flex-column justify-content-evenly align-items-center  bg-light border rounded-3 ">
+            
+            <div class="row col-12 col-md-6 flex-column justify-content-between align-items-center">
+                <div id="days" class=" col-12 col-md-10 py-3 d-flex justify-content-evenly align-items-center">
+                    <p>Sun</p>
+                    <p>Mon</p>
+                    <p>Tue</p>
+                    <p>Wed</p>
+                    <p>Thu</p>
+                    <p>Fri</p>
+                    <p>Sat</p>
+                </div>
+                <h3 class="text-center border rounded-2 bg-info py-4 " id="clock"></h3>
+            </div>
+
+            <h3 class="row col-12 col-md-6 text-center mt-4 py-4 justify-content-center align-items-center border rounded-2 bg-secondary">Digital Clock</h3>
+
+            <h3 class="row col-12 col-md-6 text-center mt-4 py-4 justify-content-center align-items-center border rounded-2 bg-info">Set Daily Alarm</h3>
+    
+            <div class="row col-12 col-md-6 justify-content-between align-items-center my-3">
+    
+                <select class="col-2" id="hours"></select>
+                <select class="col-2" id="mins"></select>
+                <select class="col-2" id="secs"></select>
+                <select class="col-2" id="session">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+            </div>
+    
+            <div class="row col-12 col-md-5 justify-content-evenly my-3">
+                <button id="set" type="button" class="btn btn-success col-4">Set</button>
+                <button id="clear" type="button" class="btn btn-danger col-4">Clear</button>
+            </div>
+
+        </div>
+  
+    </div>
+    <div>
+        <p id="main"></p>
+    </div>
+
+    <script src="./src/script.js"></script>
+    <script src="./src/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
